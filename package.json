@@ -1,0 +1,21 @@
+{
+  "name": "slack-jokes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "local": "functions-framework --target jokeBot --port 8081",
+    "deploy": "gcloud functions deploy slack-jokes --runtime nodejs16 --env-vars-file .env.yaml --trigger-http --allow-unauthenticated --region us-central1 --entry-point jokeBot"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.0"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.0.0",
+    "node-fetch": "^2.6.7"
+  }
+}
